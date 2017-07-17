@@ -1,9 +1,50 @@
+.header-white {
+  color: #F5F5f5;
+}
+.content--contact {
+  padding: 20px;
+}
+.content_paddedBox {
+  background-color: #F5F5F5;
+  padding: 10px;
+}
+
+.table--contact {
+  margin-top: 40px;
+  max-width: 60%;
+  text-align: left;
+  margin: 0 auto;
+}
+.table--list {
+  font-size: 16px;
+  padding-bottom: 10px;
+}
+.table--list-name {
+  display: inline-block;
+  width: 90px;
+}
+.contact-info {
+  padding: 10px;
+}
+.form--contact {
+  max-width: 80%;
+  padding: 10px 2px;
+  margin: 0 auto;
+}
 .validation {
   position: relative;
-/*  right: 30px;
-  top: 10px;*/
 }
-.submitBtn {
-  margin-left: 50%;
-  /*margin-right: 45%;*/
+.row_btn--submit {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.btn--submit {
+  width: 50%;
+  margin: 10px auto;
+  background-color: #02739F;
+  color: #fff;
+}
+.btn--submit:hover {
+  color: #fff;
 }

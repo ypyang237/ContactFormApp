@@ -43,28 +43,48 @@ class ContactUs extends Component {
 
   render() {
     return (
-      <div className="ContactUs">
-        <section className="pageHeader">
+      <div>
+        <section className="content--contact">
           <div className="container">
             <div className="row">
               <div className="col-md-12">
-                <h1>Contact Us</h1>
+                <h1 className="header-white">Get in Touch</h1>
               </div>
             </div>
           </div>
         </section>
-        <section className={`background-image section1`}>
+        <section className="content--contact">
           <div className="container padding-md">
             <div className="row">
-              <div className={`col-md-5 col-md-push-6 center`}>
-                <h2>We’d love to hear from you</h2>
-                <p>Phone No.   +44 207 117 2973 </p>
-                <p>Sales sales@rotageek.com</p>
-                <p>Support support@rotageek.com</p>
-                <p>Press sofie@rotageek.com</p>
-                <p>Follow Us  fontAwesome icons </p>
+              <div className="col-md-5 col-md-push-6">
+                <div className="content_paddedBox">
+                  <h2>We’d love to hear from you</h2>
+                    <hr />
+                    <div className="table--contact">
+                      <p className="table--list">
+                        <strong className="table--list-name">Phone No.</strong>
+                        <span>+44 207 117 2973 </span>
+                      </p>
+                      <p className="table--list">
+                        <strong className="table--list-name">Sales</strong>
+                        <span>sales@rotageek.com</span>
+                      </p>
+                      <p className="table--list">
+                        <strong className="table--list-name">Support</strong>
+                        <span> support@rotageek.com</span>
+                      </p>
+                      <p className="table--list">
+                        <strong className="table--list-name">Press</strong>
+                        <span> sofie@rotageek.com</span>
+                      </p>
+                      <p className="table--list">
+                        <strong className="table--list-name">Follow Us</strong>
+                        <span>  fontAwesome icons </span>
+                      </p>
+                   </div>
+                 </div>
                </div>
-              <div className={`col-md-6 col-md-pull-5 dark-gray padding-md`}>
+              <div className={`col-md-6 col-md-pull-5`}>
                <ContactForm saveEnquiry={this.props.saveEnquiry} sendSubmission={this.sendSubmission}/>
               </div>
             </div>

@@ -25,9 +25,9 @@ const validate = values => {
   return errors
 };
 
-const renderField = ({ input, type, meta: { touched, error, warning } }) => (
+const renderField = ({ input, type, placeholder, meta: { touched, error, warning } }) => (
     <div>
-      <input {...input} type={type} className="form-control"/>
+      <input {...input} type={type} placeholder={placeholder} className="form-control"/>
       {touched && ((error && <div className={`text-danger validation`}>{error}</div>) || (warning && <div className={`text-warning validation`}> {warning} </div>))}
     </div>
 );
@@ -55,55 +55,55 @@ class ContactForm extends Component {
   render() {
     const { handleSubmit } = this.props;
     return(
-      <div>
-      { !enquirySubmitted && !enquiryError &&
-        <form onSubmit={handleSubmit(this.enquirySubmit)}>
-
-          <label> Name * </label>
-          <div className="form-group">
-            <Field
-              className="form-control"
-              name="name"
-              component={renderField}
-              type="text" />
-          </div>
-          <label> Email Address * </label>
-          <div className="form-group">
-            <Field
-              className="form-control"
-              name="email"
-              component={renderField}
-              type="text" />
-          </div>
-          <label> Phone Number * </label>
-          <div className="form-group">
-            <Field
-              className="form-control"
-              name="phone"
-              component={renderField}
-              type="text" />
-          </div>
-          <label> Your Message </label>
-          <div className="form-group">
-            <Field
+      <div className="content_paddedBox">
+        { !enquirySubmitted && !enquiryError &&
+          <form onSubmit={handleSubmit(this.enquirySubmit)}>
+            <div className="form-group form--contact">
+              <Field
+                placeholder="Name"
                 className="form-control"
-                name="enquiry"
-                component="textArea"
+                name="name"
+                component={renderField}
                 type="text" />
-          </div>
-          <div className="row">
-            <div className="col-md-6">
-              <button type="submit" className="btn btn-primary btn-block submitBtn">Send</button>
             </div>
+            <div className="form-group form--contact">
+              <Field
+                placeholder="Phone"
+                className="form-control"
+                name="phone"
+                component={renderField}
+                type="text" />
+            </div>
+            <div className="form-group form--contact">
+              <Field
+                placeholder="Email"
+                className="form-control"
+                name="email"
+                component={renderField}
+                type="text" />
+            </div>
+            <div className="form-group form--contact">
+              <Field
+                  placeholder="Details"
+                  className="form-control"
+                  name="enquiry"
+                  component="textArea"
+                  type="text"
+                  style={{height: '70px'}} />
+            </div>
+            <div className="row ">
+              <div className="row-btn--submit ">
+                <button type="submit" className="btn btn-block btn--submit">Send</button>
+              </div>
+            </div>
+          </form>
+        }
+        { enquirySubmitted && !enquiryError &&
+          <div className="form-msg text-center">
+            <h2>Thank you for your enquiry!</h2>
+            <h4>We will be in touch shortly.</h4>
           </div>
-        </form>
-      }
-      { enquirySubmitted && !enquiryError &&
-        <div className="form-msg text-center">
-        <h2>Thank you for your enquiry!</h2>
-        <h4>We will be in touch shortly.</h4>
-        </div>
-      }
+        }
       </div>
     )
   }

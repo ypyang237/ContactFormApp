@@ -1,14 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Table } from 'react-bootstrap';
-
-
-// const mapStateToProps = (state) => {
-//   console.log('whats in state', state)
-//   return {
-//     locations: state.locations
-//   };
-// };
+import './Submissions.css'
 
 class Submissions extends Component {
   constructor(props) {
@@ -72,13 +65,21 @@ class Submissions extends Component {
   render() {
     return (
       <div>
-        <section className="pageHeader">
+        <section className="content--submissions">
           <div className="container">
             <div className="row">
               <div className="col-md-12">
-                <h1>Submissions</h1>
+                <h1 className="header-white">Submissions</h1>
               </div>
+            </div>
+          </div>
+        </section>
+        <section className="content--submissions">
+          <div className="container">
+            <div className="row">
+              <div className="col-md-12">
                 {this.renderSubmissions()}
+              </div>
             </div>
           </div>
         </section>
@@ -87,7 +88,5 @@ class Submissions extends Component {
   }
 }
 
-
-// Submissions = connect(mapStateToProps)(Submissions);
 
 export default Submissions;
