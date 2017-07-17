@@ -33,6 +33,10 @@ class App extends Component {
         <div className="container" style={{marginTop: '72px', width: '100%'}}>
             <div className="row">
               <div className="col-md-12">
+                <div className="app--directions">
+                  <h4>Rotageek Programming Test</h4>
+                  <p>Please click on the nav items on the top right to view the routes</p>
+                </div>
                 <Route path="/contact-us" component={ ContactUs }/>
                 <Route path="/submissions" component={ Submissions }/>
               </div>

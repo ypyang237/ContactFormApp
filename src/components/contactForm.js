@@ -2,10 +2,8 @@ import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import './contactForm.css';
 
-
 let enquirySubmitted = false;
 let enquiryError = false;
-
 
 const validate = values => {
   const errors = {};
@@ -26,14 +24,13 @@ const validate = values => {
 };
 
 const renderField = ({ input, type, placeholder, meta: { touched, error, warning } }) => (
-    <div>
-      <input {...input} type={type} placeholder={placeholder} className="form-control"/>
-      {touched && ((error && <div className={`text-danger validation`}>{error}</div>) || (warning && <div className={`text-warning validation`}> {warning} </div>))}
-    </div>
+  <div>
+    <input {...input} type={type} placeholder={placeholder} className="form-control"/>
+    {touched && ((error && <div className={`text-danger validation`}>{error}</div>) || (warning && <div className={`text-warning validation`}> {warning} </div>))}
+  </div>
 );
 
 class ContactForm extends Component {
-
 
   enquirySubmit(enquiryValue, param, props) {
     props.saveEnquiry(enquiryValue)
@@ -45,18 +42,13 @@ class ContactForm extends Component {
         props.reset();
       }
     })
-
-
   }
-
-
-
 
   render() {
     const { handleSubmit } = this.props;
     return(
       <div className="content_paddedBox">
-        { !enquirySubmitted && !enquiryError &&
+        { !enquiryError &&
           <form onSubmit={handleSubmit(this.enquirySubmit)}>
             <div className="form-group form--contact">
               <Field
@@ -109,14 +101,9 @@ class ContactForm extends Component {
   }
 }
 
-
-
-
 ContactForm = reduxForm({
   form: 'ContactRotageek',
   validate
 })(ContactForm);
 
-
 export default ContactForm;
-

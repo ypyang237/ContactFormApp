@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import { Table } from 'react-bootstrap';
 import './Submissions.css'
 
 class Submissions extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       savedSubmissions: []
     };
@@ -28,31 +26,30 @@ class Submissions extends Component {
     })
   }
 
-
   renderSubmissions() {
    let allSubmissions = this.state.savedSubmissions.map((submission) => {
     return (
-        <tbody>
-          <tr>
-            <td>{submission.name}</td>
-            <td>{submission.phone}</td>
-            <td>{submission.email}</td>
-            <td>{submission.enquiry}</td>
-          </tr>
-        </tbody>
+      <tbody>
+        <tr>
+          <td>{submission.name}</td>
+          <td>{submission.phone}</td>
+          <td>{submission.email}</td>
+          <td>{submission.enquiry}</td>
+        </tr>
+      </tbody>
     )
    })
 
    return (
       <div className="row">
         <div className="col-md-12">
-          <Table striped bordered condensed hover>
+          <Table striped bordered condensed hover className="table--bordered" >
             <thead>
               <tr>
-                <td>Name</td>
-                <td>Phone</td>
-                <td>Email</td>
-                <td>Enquiry</td>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Enquiry</th>
               </tr>
             </thead>
           {allSubmissions}
@@ -87,6 +84,5 @@ class Submissions extends Component {
     );
   }
 }
-
 
 export default Submissions;

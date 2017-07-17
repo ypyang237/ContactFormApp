@@ -1,3 +1,20 @@
 .content--submissions {
   padding: 20px;
 }
+.table--bordered {
+  border: 3px solid #F5F5F5;
+}
+table.table--bordered{
+    border: 3px solid #F5F5F5;
+  }
+table.table--bordered > thead > tr > th{
+   border: 3px solid #F5F5F5;
+   color: #F5F5F5;
+   text-align: center;
+   font-weight: normal;
+}
+table.table--bordered > tbody > tr > td{
+    border: 3px solid #F5F5F5;
+    color: black;
+    background-color: #73A0CA;
+}

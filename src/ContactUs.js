@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import ContactForm from './components/contactForm';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { saveEnquiry } from './redux/enquiries';
 
@@ -18,8 +17,6 @@ const myHeaders = new Headers();
 myHeaders.append('Content-Type', 'application/json');
 
 class ContactUs extends Component {
-
-
 
   sendSubmission(fields, cb) {
     fetch('/api/allSubmissions', {
@@ -38,7 +35,6 @@ class ContactUs extends Component {
     .catch((err)=>{
       console.error('Fetch ERROR:', err)
     });
-
   }
 
   render() {
@@ -63,23 +59,41 @@ class ContactUs extends Component {
                     <div className="table--contact">
                       <p className="table--list">
                         <strong className="table--list-name">Phone No.</strong>
-                        <span>+44 207 117 2973 </span>
+                        <a href="tel:442071172973">
+                          <i className={`fa fa-phone-square icons`}></i>
+                          +44 207 117 2973
+                        </a>
                       </p>
                       <p className="table--list">
                         <strong className="table--list-name">Sales</strong>
-                        <span>sales@rotageek.com</span>
+                        <a href="mailto:sales@rotageek.com">
+                          <i className={`fa fa-envelope-open-o icons`}></i>
+                          sales@rotageek.com
+                        </a>
                       </p>
                       <p className="table--list">
                         <strong className="table--list-name">Support</strong>
-                        <span> support@rotageek.com</span>
+                        <a href="mailto:support@rotageek.com">
+                          <i className={`fa fa-commenting-o icons`}></i>
+                          support@rotageek.com
+                        </a>
+
                       </p>
                       <p className="table--list">
                         <strong className="table--list-name">Press</strong>
-                        <span> sofie@rotageek.com</span>
+                        <a href="mailto:sofie@rotageek.com">
+                          <i className={`fa fa-newspaper-o icons`}></i>
+                          sofie@rotageek.com
+                        </a>
                       </p>
                       <p className="table--list">
                         <strong className="table--list-name">Follow Us</strong>
-                        <span>  fontAwesome icons </span>
+                        <a href="https://twitter.com/Rotageek" target="_blank" className="icons">
+                          <i className="fa fa-twitter" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://uk.linkedin.com/company/rotageek" target="_blank" className="icons">
+                          <i className="fa fa-linkedin" aria-hidden="true"></i>
+                        </a>
                       </p>
                    </div>
                  </div>
@@ -99,6 +113,5 @@ ContactUs = connect(
   null,
   mapDispatchToProps
 )(ContactUs);
-
 
 export default ContactUs;
