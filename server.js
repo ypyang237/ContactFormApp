@@ -14,9 +14,9 @@ app.get("/api/allSubmissions", (req, res) => {
 
 app.post("/api/allSubmissions", (req, res) => {
   SUBMISSIONS.push(req.body);
-  res.send('completed POST request');
+  res.send('completed POST r99equest');
 });
 
 app.listen(app.get("port"), () => {
-  console.log(`Find the server at: http://localhost:${app.get("port")}/`); // eslint-disable-line no-console
+  console.log(`Find the server at: http://localhost:${app.get("port")}/`);
 });
